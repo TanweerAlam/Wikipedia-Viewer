@@ -36,24 +36,20 @@ $('document').ready(function(){
 		}
 	}
 
-	$('#searchArticle').click(function(){
-		
+	$('#searchArticle').click(function(event){
 		var keyword = $('#text-field').val();
 		showResult(keyword);
-
+    event.preventDefault();
 	});
 
 	$('#randomArticle').click(function(){
 		window.open("https://en.wikipedia.org/wiki/special:random");
 	});
 
-	$('#text-field').keyup(function(){
+	$('#text-field').keyup(function(event){
 		var keyPressed = $(this).val();
 		$('#content').empty();
 		showResult(keyPressed);
+    event.preventDefault();
 	});
 });
-
-
-
-// https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=
